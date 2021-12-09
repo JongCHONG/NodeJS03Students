@@ -6,12 +6,16 @@ const Form = () => {
   const handleSubmit = e => {
     e.preventDefault()
 
-    fetch('http://localhost:5000/students/', {
+    const student = {
+      name
+    }
+
+    fetch('http://localhost:5000/students', {
       method: "post",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(name)
+      body: JSON.stringify(student)
     })
       .then(response => response.json())
       .then(data => console.log(data))
@@ -27,7 +31,7 @@ const Form = () => {
       <h1>Formulaire</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleOnChange}/>
-        <button type="submit">Ajouter prénom</button>
+        <button type="submit">Ajouter student</button>
       </form>
     </div>
   )
