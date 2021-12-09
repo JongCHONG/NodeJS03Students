@@ -1,10 +1,12 @@
 const express = require("express")
 const app = express()
+const cors = require('cors')
 const port = 5000
 const bodyparser = require("body-parser")
 
 let students = ["Alin", "Kevin", "Eloi", "Jong", "Rebecca", "Bilal", "Marco", "Helene", "Karimou"]
 
+app.use(cors())
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
 
