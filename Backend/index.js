@@ -10,6 +10,8 @@ app.use(cors())
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
 
+//app.use(express.json()) plus besoin de body parser
+
 app.get("/students", (req, res) => {
   res.json(students)
 })

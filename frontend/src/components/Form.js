@@ -18,7 +18,7 @@ const Form = () => {
       body: JSON.stringify(student)
     })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => console.log(data)) //maj du tableau avec contexte
   }
   
   const handleOnChange = e => {
